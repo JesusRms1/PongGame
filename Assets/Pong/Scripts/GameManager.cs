@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject PowerUp;
     public float PowerUpSpawn = 10f;
     public Transform PowerUpSpawnPoint;
+    public CameraShake cameraShake;
     
    
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         {
             rightPlayerScore++;
             Debug.Log($"Right player scored: {rightPlayerScore}");
+              cameraShake.Shake(); 
 
             if (rightPlayerScore >= scoreToWin)
                 // Debug.Log("Right player wins!");
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             leftPlayerScore++;
             Debug.Log($"Left player scored: {leftPlayerScore}");
+            cameraShake.Shake();
 
             if (rightPlayerScore >= scoreToWin)
                 // Debug.Log("Right player wins!");
