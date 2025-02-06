@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     int rightPlayerScore;
     Vector3 ballStartPos;
 
-    const int scoreToWin = 11;
+    const int scoreToWin = 5;
 
     //---------------------------------------------------------------------------
     void Start()
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Left player scored: {leftPlayerScore}");
             cameraShake.Shake();
 
-            if (rightPlayerScore >= scoreToWin)
+            if (leftPlayerScore >= scoreToWin)
                 // Debug.Log("Right player wins!");
                 DisplayWinner("Left Player Wins");
             else
