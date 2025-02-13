@@ -24,6 +24,21 @@ public class Paddle : MonoBehaviour
     //-----------------------------------------------------------------------------
     void OnCollisionEnter(Collision other)
     {
+
+         if (other.gameObject.CompareTag("Ball")) 
+    {
+        
+        Renderer ballRenderer = other.gameObject.GetComponent<Renderer>();
+
+        if (ballRenderer != null)
+        {
+            ballRenderer.material.color = new Color(
+                UnityEngine.Random.value, 
+                UnityEngine.Random.value, 
+                UnityEngine.Random.value
+            );
+        }
+    }
         var paddleBounds = GetComponent<BoxCollider>().bounds;
         float maxPaddleHeight = paddleBounds.max.z;
         float minPaddleHeight = paddleBounds.min.z;
